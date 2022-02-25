@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "143709903654",
+    "project_id": "bookmarker-990ce",
+    "storage_bucket": "bookmarker-990ce.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:143709903654:android:b55687bc4477153280ffe7",
+        "android_client_info": {
+          "package_name": "com.flaw.bookmarker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "143709903654-ou4flc1lm6rgqgc2h4r71ittea8040e6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7AlQpxAQIGw6uGf30-1qJ2mrkCCieSGI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "143709903654-ou4flc1lm6rgqgc2h4r71ittea8040e6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
