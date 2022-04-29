@@ -1,3 +1,5 @@
+
+
 import 'package:flutter/material.dart';
 
 class AddBookmarkScreen extends StatelessWidget {
@@ -29,25 +31,49 @@ class AddBookmarkScreen extends StatelessWidget {
             TextField(
               autofocus: true,
               textAlign: TextAlign.center,
+              decoration: InputDecoration(
+                icon: Icon(Icons.content_paste),
+                hintText: 'Title or URL'
+              ),
             ),
             SizedBox(
               height: 20.0,
             ),
-            TextButton(
-              style: TextButton.styleFrom(
-                primary: Colors.white,
-                backgroundColor: Colors.lightBlueAccent,
-              ),
-              child:Text(
-                'Add',
-                style: TextStyle(
-                  color: Colors.white,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                TextButton(
+                  style: TextButton.styleFrom(
+                    primary: Colors.white,
+                    backgroundColor: Colors.lightBlueAccent,
+                  ),
+                  child:Text(
+                    'Add',
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
+                  ),
+                  onPressed: (){
+                    //add new bookmark go to new route 
+                  },
                 ),
-              ),
-              onPressed: (){
-                //add new bookmark
-              },
-             ),
+                TextButton(
+                  style: TextButton.styleFrom(
+                    primary: Colors.white,
+                    backgroundColor: Colors.lightBlueAccent,
+                  ),
+                  child:Text(
+                    'Cancel',
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
+                  ),
+                  onPressed: (){
+                    //keyboard disappear
+                  },
+                ),
+              ],
+            )
           ],
         ),
       ),
