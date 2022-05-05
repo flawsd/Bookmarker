@@ -13,12 +13,50 @@ class ToaddProvider extends ChangeNotifier{
       title: 'uo',
       category: 'shopping',
     ),
+    Toaddinfo(
+      createdTime: DateTime.now(),
+      title: 'www.Walmart.com',
+      category: 'shopping',
+    ),
+    Toaddinfo(
+      createdTime: DateTime.now(),
+      title: 'uo',
+      category: 'shopping',
+    ),
+    Toaddinfo(
+      createdTime: DateTime.now(),
+      title: 'uo',
+      category: 'shopping',
+    ),
+    Toaddinfo(
+      createdTime: DateTime.now(),
+      title: 'uo',
+      category: 'shopping',
+    ),
+
   ];
 
-  List<Toaddinfo> get toadds => _toadds;
+  List<Toaddinfo> get toadds => _toadds.toList();
+
+  void addBookmark(Toaddinfo toaddinfo){
+    _toadds.add(toaddinfo);
+    notifyListeners();
+  }
 
   int get bkCounts {
     return toadds.length;
+  }
+
+  void removeBookmark(Toaddinfo toaddinfo){
+    _toadds.remove(toaddinfo);
+    notifyListeners();
+  }
+
+  void updateBookmark(Toaddinfo toaddinfo, String title, String category){
+    toaddinfo.title = title;
+    toaddinfo.category = category;
+
+    notifyListeners();
   }
 
 }

@@ -1,7 +1,12 @@
+import 'package:bookmarker/helper/toaddInfo.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:bookmarker/screen/bookmark_page.dart';
 import 'package:bookmarker/helper/to_add_form.dart';
+import 'package:bookmarker/helper/bookmark_widget.dart';
+import 'package:bookmarker/helper/toadd_list_widget.dart';
+import 'package:bookmarker/helper/provider.dart';
+import 'package:provider/provider.dart';
 
 
 
@@ -45,11 +50,32 @@ class _AddBookmarkScreenState extends State<AddBookmarkScreen> {
               ToAdd(
                   onChangedTitle:(title) =>setState(() => this.title = title),
                   onChangedCategory:(category) =>setState(() => this.category = category),
-                  onSavedToAdd: (){},
+                  onSavedToAdd: addBookmark,
               ),
             ],
           ),
         ),
       ),
   );
+
+  void addBookmark(){
+    final isValid = _formKey.currentState!.validate();
+
+    if(!isValid){
+      return;
+    }else{
+      final toaddInfo = Toaddinfo(
+          id: DateTime.now().toString(),
+          title: title,
+          category: category,
+          createdTime: DateTime.now(),
+      );
+
+      final provider = Provider.of<ToaddProvider>(context, listen: false);
+      provider.addBookmark(toaddInfo);
+      print(toaddInfo.title);
+      Navigator.of(context).pop();
+    }
+
+  }
 }

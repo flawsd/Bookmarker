@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:bookmarker/screen/add_bookmark_screen.dart';
 import 'package:path/path.dart';
 import 'package:bookmarker/screen/tasks_screen.dart';
+import 'package:bookmarker/helper/bookmark_widget.dart';
+import 'package:bookmarker/helper/provider.dart';
 
 class ToAdd extends StatelessWidget {
   final String title;
@@ -36,7 +38,12 @@ class ToAdd extends StatelessWidget {
   Widget buildTitle() => TextFormField(
     initialValue: title,
     onChanged: onChangedTitle,
-
+    validator: (title){
+      if(title!.isEmpty){
+        return 'The title cannot be empty';
+      }
+      return null;
+    },
     autofocus: true,
     textAlign: TextAlign.center,
     decoration: InputDecoration(
